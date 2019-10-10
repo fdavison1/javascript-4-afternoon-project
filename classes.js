@@ -60,7 +60,32 @@ class Employee {
 */
 
 //Code Here
-
+class Manager extends Employee {
+  constructor(first_name, last_name, email, age){
+    super(first_name, last_name, email, age)
+    this.reports = []
+  }
+  hire(employee) {
+    this.reports.push(employee)
+    
+    if (this.reports.length > 100){
+      this.title = 'Bestest Manager'
+    } else if (this.reports.length > 50){
+      this.title = 'Manager Plus'
+    } else if (this.reports.length > 10){
+      this.title = 'Manager' 
+    } else if (this.reports.length > 4){
+      this.title = 'Mostly Manager'
+    } else if (this.reports.length > 0){
+      this.title = 'Barely Manager'
+    }
+  
+  }
+  fire(i) {
+    this.reports.splice(i, 1)
+    this.bonus += 100
+  }
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -84,7 +109,27 @@ class Employee {
 */
 
 //Code Here
-
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age){
+    super(first_name, last_name, email, age)
+    this.title = 'Not a manager'
+    this.bonus = 0
+  }
+  // promote() {
+  //   if (this.reports > 100){
+  //     this.title = 'Bestest Manager'
+  //   } else if (this.reports > 50){
+  //     this.title = 'Manager Plus'
+  //   } else if (this.reports > 10){
+  //     this.title = 'Manager' 
+  //   } else if (this.reports > 0){
+  //     this.title = 'Barely Manager'
+  //   }
+  // } 
+  // bonus(){
+  //   this.bonus += 100
+  // }
+} 
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
