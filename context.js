@@ -20,7 +20,13 @@
   
 
 //Code Here
-
+let user = {
+  username: 'fred',
+  email: 'fred@fred.com',
+  getUsername: function(){
+    return this.username
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -42,7 +48,7 @@ class Animal {
 }
 
 //Code Here
-
+const animal1 = new Animal('bird', 'bird', 'seeds')
 
 
 ////////// PROBLEM 3 //////////
